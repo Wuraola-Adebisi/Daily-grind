@@ -397,6 +397,23 @@ blockquote {
 #contact {
   background: var(--bg);
   padding: 80px 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-info h2, .contact-hours h2 {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--dark);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--accent);
+}
+
+.contact-info p, .contact-hours p {
+  line-height: 2;
+  color: var(--text);
+  font-size: 0.95rem;
 }
 
 #contact h2 {
