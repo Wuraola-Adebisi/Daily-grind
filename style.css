@@ -94,10 +94,10 @@ body {
 /*Hero*/
 #hero {
    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-  url('https://i.imgur.com/qvHza9K.jpeg');
+  url('https://i.imgur.com/0MfI9k1.jpeg');
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: calc(100vh - var(--nav-height));
   display: flex;
   flex-direction: column;
   align-items: center;
