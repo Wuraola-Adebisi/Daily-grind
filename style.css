@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:wght@400;500&family=DM+Mono&family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,700;1,400&display=swap');
+
+
+/*Variables*/
+:root {
+  --bg: #f5f0e8;
+  --surface: #faf7f2;
+  --dark:#2c1810;
+  --accent: #8b4513;
+  --accent-light: #c4886f;
+  --sage: #7c9a7e;
+  --text: #3d3530;
+  --text-dim: #8a7b74;
+  --border: #e0d8cc;
+  --nav-height: 70px;
+}
+
+/* ── Reset ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  color: var(--text);
+  padding-top: var(--nav-height);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/*Header & Nav*/
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 1000;
+  border-bottom: 3px solid var(--accent);
+}
+
+.name h1 {
+   font-family: 'Pinyon Script', "Lucida Handwriting", "Comic Sans MS", cursive;
+  color: var(--bg);
+  font-size: 2.2rem;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.nav-bar {
+  background: transparent;
+  width: auto;
+  height: auto;
+  padding: 0;
+  position: static;
+}
+
+.nav-bar ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar ul li a {
+  color: var(--bg);
+  text-decoration: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-bar ul li a:hover {
+  color: var(--accent-light);
+}
+
+/* ── Hero ── */
+#hero {
+  height: 100vh;
+  background: var(--dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  position: relative;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(139,69,19,0.15) 0%, transparent 70%);
+}
+
+#hero h2 {
+    font-family: 'Cormorant Garamond', "Lucida Handwriting", cursive;
+  font-size: clamp(3rem, 10vw, 7rem);
+  color: var(--bg);
+  margin-bottom: 16px;
+  position: relative;
+}
+
+#hero p {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--accent-light);
+  margin-bottom: 40px;
+  position: relative;
+}
+
+#hero button {
+  background: var(--accent);
+  color: white;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px 36px;
+  width: auto;
+  height: auto;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s, transform 0.2s;
+}
+
+#hero button:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+#hero a {
+  color: white;
+}
+
+/*About*/
+#about {
+  background: var(--bg);
+  padding: 80px 10%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#about h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--dark);
+  margin-bottom: 32px;
+}
+
+#about p {
+  line-height: 1.9;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+blockquote {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--accent);
+  padding: 24px 40px;
+  border-left: 4px solid var(--accent);
+  background: var(--surface);
+  border-radius: 0 8px 8px 0;
+  line-height: 1.8;
+}
+
+/*Menu*/
+#menu {
+  background: var(--surface);
+  padding: 80px 5%;
+}
+
+#menu h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--dark);
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+#menu h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--dark);
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--accent);
+  font-family: 'Cormorant Garamond', "Lucida Handwriting", cursive;
+}
+
+.drink, .food {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  padding: 20px 0 40px;
+}
+
+.drink h3, .food h3 {
+  grid-column: 1 / -1;
+  border-bottom: none;
+}
+
+.drink-1, .drink-2, .drink-3, .drink-4,
+.food-1, .food-2, .food-3, .food-4 {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.drink-1:hover, .drink-2:hover, .drink-3:hover, .drink-4:hover,
+.food-1:hover, .food-2:hover, .food-3:hover, .food-4:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(44, 24, 16, 0.12);
+}
+
+#menu img {
+  width: 100;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  border-radius: 0;
+}
+
+.drink-1 h4, .drink-2 h4, .drink-3 h4, .drink-4 h4,
+.food-1 h4, .food-2 h4, .food-3 h4, .food-4 h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--dark);
+  padding: 16px 16px 4px;
+}
+
+.drink-1 p, .drink-2 p, .drink-3 p, .drink-4 p,
+.food-1 p, .food-2 p, .food-3 p, .food-4 p {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  padding: 0 16px 4px;
+  line-height: 1.5;
+}
+
+.drink-1 p:last-child, .drink-2 p:last-child,
+.drink-3 p:last-child, .drink-4 p:last-child,
+.food-1 p:last-child, .food-2 p:last-child,
+.food-3 p:last-child, .food-4 p:last-child {
+  font-family: 'DM Mono', monospace;
+  color: var(--accent);
+  font-size: 1rem;
+  padding: 8px 16px 16px;
+}
+
+/*Events*/
+#event {
+  background: var(--dark);
+  padding: 80px 5%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+#event::before {
+  content: 'What\'s On';
+  display: block;
+  grid-column: 1 / -1;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--bg);
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--accent);
+  margin-bottom: 12px;
+}
+
+.event-1, .event-2, .event-3 {
+  display: flex;
+  flex-direction: column;
+  background: #3d2010;
+  border: 1px solid #5a3020;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  transition: transform 0.3s;
+}
+
+.event-1:hover, .event-2:hover, .event-3:hover {
+  transform: translateY(-4px);
+}
+
+.event-date {
+  padding: 20px 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.event-month {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+}
+
+.event-day {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+
+.event-info {
+  padding: 0 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.event-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.event-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent-light);
+  letter-spacing: 1px;
+}
+
+.event-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+}
+
+.event-info button {
+  margin-top: 12px;
+  background: var(--accent);
+  color: white;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  width: fit-content;
+  height: auto;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.event-info button:hover {
+  background: var(--accent-light);
+}
+
+/*Contact*/
+#contact {
+  background: var(--bg);
+  padding: 80px 10%;
+}
+
+#contact h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--dark);
+  margin-bottom: 40px;
+}
+
+#contact p {
+  font-size: 0.95rem;
+  line-height: 2;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+/*Footer*/
+footer {
+  background: #1a0e08;
+  padding: 32px;
+  text-align: center;
+}
+
+footer p {
+  color: var(--text-dim);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+/*Media Queries*/
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    height: auto;
+    padding: 16px 24px;
+    gap: 12px;
+  }
+
+  body {
+    padding-top: 120px;
+  }
+
+  .name h1 {
+    font-size: 1.8rem;
+  }
+
+  .nav-bar ul {
+    gap: 16px;
+  }
+
+  .drink, .food {
+    grid-template-columns: 1fr;
+  }
+
+  #event {
+    grid-template-columns: 1fr;
+  }
+
+  #about {
+    padding: 60px 6%;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-bar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+}
