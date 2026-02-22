@@ -420,8 +420,6 @@ footer {
   text-align: center;
   width: 100%;
   display: block;
-  clear: both;
-  grid-column: 1 / -1;
 }
 
 footer p {
