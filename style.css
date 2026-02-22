@@ -397,6 +397,9 @@ blockquote {
 #contact {
   background: var(--bg);
   padding: 80px 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
 }
 
 #contact h2 {
@@ -468,5 +471,11 @@ footer p {
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  #contact {
+    grid-template-columns: 1fr;
   }
 }
