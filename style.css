@@ -240,13 +240,14 @@ blockquote {
   padding: 0;
   gap: 0;
   transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
 }
 
 .drink-1:hover, .drink-2:hover, .drink-3:hover, .drink-4:hover,
 .food-1:hover, .food-2:hover, .food-3:hover, .food-4:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 32px rgba(44, 24, 16, 0.12);
-  cursor:pointer;
+  cursor: pointer;
 }
 
 #menu img {
@@ -318,6 +319,7 @@ blockquote {
   padding: 0;
   gap: 0;
   transition: transform 0.3s;
+  cursor: pointer;
 }
 
 .event-1:hover, .event-2:hover, .event-3:hover {
