@@ -246,6 +246,7 @@ blockquote {
 .food-1:hover, .food-2:hover, .food-3:hover, .food-4:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 32px rgba(44, 24, 16, 0.12);
+  cursor:pointer;
 }
 
 #menu img {
