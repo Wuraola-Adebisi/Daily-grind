@@ -1,11 +1,11 @@
-# The Daily Grind ☕
+# The Daily Grind
 
 A fictional café website built as part of my frontend development journey. Warm colors, cozy vibes, and a menu that will make you genuinely hungry.
 
-## 🔗 Live Site
+## Live Site
 [View Live](https://wuraola-adebisi.github.io/Daily-grind/)
 
-## 📌 About
+## About
 The Daily Grind is a concept café website for a fictional coffee shop based in Ibadan, Nigeria. The project was built to practice semantic HTML, CSS layout techniques, and responsive design.
 
 ## Built With
