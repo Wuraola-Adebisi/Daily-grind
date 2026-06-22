@@ -94,7 +94,7 @@ body {
 /*Hero*/
 #hero {
    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-  url('https://res.cloudinary.com/dnkfg07ov/image/upload/q_auto/f_auto/v1775836564/download_14_fwgvdl.jpg');
+  url('https://res.cloudinary.com/dnkfg07ov/image/upload/v1782086166/download_13_x5ubod.jpg');
   background-size: cover;
   background-position: center;
   height: calc(100vh - var(--nav-height));
