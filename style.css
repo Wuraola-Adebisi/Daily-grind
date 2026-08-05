@@ -389,17 +389,21 @@ font-family: "Playfair Display", serif;
 
 .book-pick-photo {
   position: relative;
+  display: inline-block;
+  padding: 10px;
+  background: #fff;
   border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(44, 24, 16, 0.18);
+  box-shadow:
+    0 8px 18px rgba(44, 24, 16, 0.08),
+    0 20px 40px rgba(44, 24, 16, 0.18);
   transform: rotate(-2deg);
 }
 
 .book-pick-photo img {
-  width: 100%;
-  aspect-ratio: 7 / 9;
-  object-fit: cover;
   display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
 }
 
 .book-pick-sticky {
