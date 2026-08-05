@@ -35,37 +35,52 @@ body {
   overflow-x: hidden;
 }
 
-/*Header & Nav*/
+/* Header & Navigation */
+
 .main-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: var(--nav-height);
-  background: var(--dark);
+  padding: 0 40px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
-  z-index: 1000;
+
+  background: rgba(44, 24, 16, 0.92);
   border-bottom: 3px solid var(--accent);
+
+  z-index: 1000;
+
+  transition:
+    background .3s ease,
+    box-shadow .3s ease,
+    backdrop-filter .3s ease;
+
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
+}
+
+.main-header.scrolled {
+  background: rgba(44,24,16,.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: 0 12px 28px rgba(0,0,0,.12);
 }
 
 .name h1 {
-  font-family: "Pinyon Script", "Lucida Handwriting", "Comic Sans MS", cursive;
+  font-family: "Pinyon Script", cursive;
   color: var(--bg);
   font-size: 2.2rem;
-  padding: 0;
   margin: 0;
-  text-align: left;
+  line-height: 1;
 }
 
 .nav-bar {
   background: transparent;
-  width: auto;
-  height: auto;
-  padding: 0;
-  position: static;
 }
 
 .nav-bar ul {
@@ -76,17 +91,17 @@ body {
   padding: 0;
 }
 
-.nav-bar ul li a {
+.nav-bar a {
   color: var(--bg);
   text-decoration: none;
   font-family: "DM Mono", monospace;
-  font-size: 0.8rem;
+  font-size: .8rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: color 0.2s;
+  transition: color .25s ease;
 }
 
-.nav-bar ul li a:hover {
+.nav-bar a:hover {
   color: var(--accent-light);
 }
 
@@ -211,7 +226,7 @@ blockquote {
 }
 
 #menu h3 {
-  font-family: "Playfair Display", serif;
+font-family: "Playfair Display", serif;
   font-size: 1.6rem;
   color: var(--dark);
   margin-bottom: 8px;
@@ -534,4 +549,58 @@ footer p {
   #contact {
     grid-template-columns: 1fr;
   }
+}
+
+
+.menu-toggle {
+  display: none;
+
+  background: none;
+  border: none;
+
+  color: white;
+
+  font-size: 2rem;
+
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  .main-header {
+    padding: 0 24px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-bar {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
+    background: var(--dark);
+
+    display: none;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+  }
+
+  .nav-bar.open {
+    display: block;
+  }
+
+  .nav-bar ul {
+
+    flex-direction: column;
+
+    padding: 24px;
+
+    gap: 20px;
+  }
+
 }
