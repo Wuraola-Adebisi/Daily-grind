@@ -252,11 +252,9 @@ blockquote {
 
 #menu img {
   width: 100%;
-  height: 350px;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-  display: flex;
-  margin: 0;
-  border-radius: 0;
+  display: block;
 }
 
 .drink-1 h4, .drink-2 h4, .drink-3 h4, .drink-4 h4,
