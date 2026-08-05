@@ -214,11 +214,17 @@ blockquote {
   font-family: 'Cormorant Garamond', "Lucida Handwriting", cursive;
 }
 
+.drink img,
+.food img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
 .drink, .food {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  padding: 20px 0 40px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .drink h3, .food h3 {
@@ -252,9 +258,8 @@ blockquote {
 
 #menu img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  display: block;
 }
 
 .drink-1 h4, .drink-2 h4, .drink-3 h4, .drink-4 h4,
