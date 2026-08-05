@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:wght@400;500&family=DM+Mono&family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,700;1,400&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:wght@400;500&family=Work+Sans:wght@400;500&family=DM+Mono&family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,700;1,400&display=swap");
 /*Variables*/
 :root {
   --bg: #f5f0e8;
@@ -27,7 +26,7 @@ html {
 
 body {
   background: var(--bg);
-  font-family: "Lora", serif;
+  font-family: "Work Sans", sans-serif;
   font-size: 16px;
   color: var(--text);
   padding-top: var(--nav-height);
@@ -283,6 +282,18 @@ font-family: "Playfair Display", serif;
   box-shadow: 0 12px 32px rgba(44, 24, 16, 0.12);
 }
 
+.menu-card:hover .menu-card-price {
+  color: var(--sage);
+}
+
+.menu-card-price {
+  font-family: "DM Mono", monospace;
+  color: var(--accent);
+  font-size: 1rem;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
 .menu-card-body {
   display: flex;
   flex-direction: column;
@@ -373,7 +384,8 @@ font-family: "Playfair Display", serif;
 .event-2,
 .event-3 {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: stretch;
   background: #3d2010;
   border: 1px solid #5a3020;
   border-radius: 8px;
@@ -383,7 +395,10 @@ font-family: "Playfair Display", serif;
   margin: 0;
   padding: 0;
   gap: 0;
-  transition: transform 0.3s;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
   cursor: pointer;
 }
 
@@ -391,36 +406,54 @@ font-family: "Playfair Display", serif;
 .event-2:hover,
 .event-3:hover {
   transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  border-color: var(--accent);
 }
 
 .event-date {
-  padding: 20px 24px;
+  flex: 0 0 96px;
+  background: var(--accent);
+  padding: 20px 12px;
   display: flex;
-  align-items: baseline;
-  gap: 12px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  position: relative;
+}
+
+.event-date::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -1px;
+  bottom: 0;
+  border-right: 2px dashed rgba(245, 240, 232, 0.35);
 }
 
 .event-month {
   font-family: "DM Mono", monospace;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   letter-spacing: 3px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.85);
   text-transform: uppercase;
 }
 
 .event-day {
   font-family: "Playfair Display", serif;
-  font-size: 3rem;
+  font-size: 2.6rem;
   font-weight: 700;
   color: white;
   line-height: 1;
 }
 
 .event-info {
-  padding: 0 24px 24px;
+  padding: 20px 24px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 10px;
+  flex: 1;
 }
 
 .event-info h3 {
@@ -456,34 +489,12 @@ font-family: "Playfair Display", serif;
   border: none;
   border-radius: 2px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .event-info button:hover {
   background: var(--accent-light);
-}
-
-/*Contact*/
-#contact {
-  background: var(--bg);
-  padding: 80px 10%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
-#contact h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 2.5rem;
-  color: var(--dark);
-  margin-bottom: 40px;
-}
-
-#contact p {
-  font-size: 0.95rem;
-  line-height: 2;
-  color: var(--text);
-  margin-bottom: 20px;
+  transform: translateY(-2px);
 }
 
 /*Footer*/
@@ -603,4 +614,27 @@ footer p {
     gap: 20px;
   }
 
+}
+
+@media (max-width: 480px) {
+  .event-1,
+  .event-2,
+  .event-3 {
+    flex-direction: column;
+  }
+
+  .event-date {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .event-date::after {
+    top: auto;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    border-right: none;
+    border-bottom: 2px dashed rgba(245, 240, 232, 0.35);
+  }
 }
