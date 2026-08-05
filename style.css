@@ -190,7 +190,7 @@ blockquote {
   line-height: 1.8;
 }
 
-/* Menu */
+/*Menu*/
 #menu {
   background: var(--surface);
   padding: 80px 5%;
@@ -205,26 +205,29 @@ blockquote {
 }
 
 #menu h3 {
-  font-family: 'Cormorant Garamond', "Lucida Handwriting", cursive;
+  font-family: 'Playfair Display', serif;
   font-size: 1.6rem;
   color: var(--dark);
   margin-bottom: 8px;
   padding-bottom: 12px;
   border-bottom: 2px solid var(--accent);
+  font-family: 'Cormorant Garamond', "Lucida Handwriting", cursive;
 }
 
-/* Menu Grid */
-.drink,
-.food {
+.drink, .food {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   padding: 20px 0 40px;
 }
 
-/* Menu Cards */
-.drink > div,
-.food > div {
+.drink h3, .food h3 {
+  grid-column: 1 / -1;
+  border-bottom: none;
+}
+
+.drink-1, .drink-2, .drink-3, .drink-4, .drink-5, .drink-6,
+.food-1, .food-2, .food-3, .food-4, .food-5, .food-6 {
   display: flex;
   flex-direction: column;
   background: var(--surface);
@@ -233,19 +236,20 @@ blockquote {
   overflow: hidden;
   width: 100%;
   height: auto;
+  margin: 0;
   padding: 0;
   gap: 0;
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
 }
 
-.drink > div:hover,
-.food > div:hover {
+.drink-1:hover, .drink-2:hover, .drink-3:hover, .drink-4:hover, .drink-5:hover, .drink-6:hover,
+.food-1:hover, .food-2:hover, .food-3:hover, .food-4:hover, .food-5:hover, .food-6:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 32px rgba(44, 24, 16, 0.12);
+  cursor: pointer;
 }
 
-/* Menu Images */
 #menu img {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -253,50 +257,35 @@ blockquote {
   display: block;
 }
 
-/* Menu Item Titles */
-.drink h4,
-.food h4 {
+.drink-1 h4, .drink-2 h4, .drink-3 h4, .drink-4 h4, .drink-5 h4, .drink-6 h4,
+.food-1 h4, .food-2 h4, .food-3 h4, .food-4 h4, .food-5 h4, .food-6 h4 {
   font-family: 'Playfair Display', serif;
   font-size: 1rem;
   color: var(--dark);
   padding: 16px 16px 4px;
-  margin: 0;
 }
 
-/* Menu Descriptions */
-.drink p,
-.food p {
+.drink-1 p, .drink-2 p, .drink-3 p, .drink-4 p,
+.drink-5 p, .drink-6 p, .food-1 p, .food-2 p,
+.food-3 p, .food-4 p, .food-5 p, .food-6 p {
   font-size: 0.85rem;
   color: var(--text-dim);
   padding: 0 16px 4px;
   line-height: 1.5;
-  margin: 0;
 }
 
-/* Price */
-.drink p:last-child,
-.food p:last-child {
+.drink-1 p:last-child, .drink-2 p:last-child,
+.drink-3 p:last-child, .drink-4 p:last-child, 
+.drink-5 p:last-child, .drink-6 p:last-child,
+.food-1 p:last-child, .food-2 p:last-child,
+.food-3 p:last-child, .food-4 p:last-child
+.food-5 p:last-child, .food-6 p:last-child {
   font-family: 'DM Mono', monospace;
   color: var(--accent);
   font-size: 1rem;
   padding: 8px 16px 16px;
 }
 
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .drink,
-  .food {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .drink,
-  .food {
-    grid-template-columns: 1fr;
-  }
-}
 /*Events*/
 #event {
   background: var(--dark);
