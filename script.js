@@ -28,3 +28,18 @@ document.querySelectorAll(".nav-bar a").forEach(link => {
   });
 
 });
+
+const newsletterForm = document.getElementById("newsletter-form");
+const newsletterStatus = document.getElementById("newsletter-status");
+
+if (newsletterForm) {
+  newsletterForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = newsletterForm.email.value.trim();
+    if (!email) return;
+
+    newsletterStatus.textContent =
+      "You're on the list. See you at the next one.";
+    newsletterForm.reset();
+  });
+}
