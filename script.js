@@ -1,8 +1,8 @@
-document.querySelectorAll('#menu img').forEach((img) => {
+document.querySelectorAll("#menu img").forEach((img) => {
   if (img.complete) {
-    img.classList.add('is-loaded');
+    img.classList.add("is-loaded");
   } else {
-    img.addEventListener('load', () => img.classList.add('is-loaded'));
+    img.addEventListener("load", () => img.classList.add("is-loaded"));
   }
 });
 
@@ -19,27 +19,8 @@ menuButton.addEventListener("click", () => {
   nav.classList.toggle("open");
 });
 
-document.querySelectorAll(".nav-bar a").forEach(link => {
-
+document.querySelectorAll(".nav-bar a").forEach((link) => {
   link.addEventListener("click", () => {
-
     nav.classList.remove("open");
-
   });
-
 });
-
-const newsletterForm = document.getElementById("newsletter-form");
-const newsletterStatus = document.getElementById("newsletter-status");
-
-if (newsletterForm) {
-  newsletterForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = newsletterForm.email.value.trim();
-    if (!email) return;
-
-    newsletterStatus.textContent =
-      "You're on the list. See you at the next one.";
-    newsletterForm.reset();
-  });
-}

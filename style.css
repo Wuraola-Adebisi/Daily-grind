@@ -54,20 +54,20 @@ body {
   z-index: 1000;
 
   transition:
-    background .3s ease,
-    box-shadow .3s ease,
-    backdrop-filter .3s ease;
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    backdrop-filter 0.3s ease;
 
   backdrop-filter: blur(0);
   -webkit-backdrop-filter: blur(0);
 }
 
 .main-header.scrolled {
-  background: rgba(44,24,16,.78);
+  background: rgba(44, 24, 16, 0.78);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
-  box-shadow: 0 12px 28px rgba(0,0,0,.12);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 .name h1 {
@@ -94,10 +94,10 @@ body {
   color: var(--bg);
   text-decoration: none;
   font-family: "DM Mono", monospace;
-  font-size: .8rem;
+  font-size: 0.8rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: color .25s ease;
+  transition: color 0.25s ease;
 }
 
 .nav-bar a:hover {
@@ -234,7 +234,7 @@ blockquote {
 }
 
 #menu h3 {
-font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.6rem;
   color: var(--dark);
   margin-bottom: 8px;
@@ -268,7 +268,6 @@ font-family: "Playfair Display", serif;
   opacity: 0;
   transition: opacity 0.4s ease;
 }
-
 
 #menu img.is-loaded {
   opacity: 1;
@@ -397,7 +396,7 @@ font-family: "Playfair Display", serif;
     0 8px 18px rgba(44, 24, 16, 0.08),
     0 20px 40px rgba(44, 24, 16, 0.18);
   transform: rotate(-2deg);
-   max-width: 320px;
+  max-width: 320px;
 }
 
 .book-pick-photo img {
@@ -449,7 +448,6 @@ font-family: "Playfair Display", serif;
   font-style: italic;
   margin-bottom: 0;
 }
-
 
 /*Gallery*/
 #gallery {
@@ -637,14 +635,15 @@ font-family: "Playfair Display", serif;
   border: none;
   border-radius: 2px;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.2s;
 }
 
 .event-info button:hover {
   background: var(--accent-light);
   transform: translateY(-2px);
 }
-
 
 /*Contact*/
 #contact {
@@ -754,7 +753,7 @@ footer p {
     width: 100%;
     background: var(--dark);
     display: none;
-    border-top: 1px solid rgba(255,255,255,.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .nav-bar.open {
