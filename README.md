@@ -24,3 +24,5 @@ The Daily Grind is a concept café website for a coffee shop based in Ibadan, Ni
 - Events section
 - Contact and location section
 - Fully responsive on mobile
+
+
