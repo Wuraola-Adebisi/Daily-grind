@@ -1,0 +1,155 @@
+/*
+ * Daily Grind — motion and micro-interaction layer
+ * Load this AFTER style.css. It adds no new layout, colours, fonts, or imagery.
+ */
+
+:root {
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-duration: 700ms;
+}
+
+/* A quiet entrance for the existing hero content. */
+.motion-ready #hero h2,
+.motion-ready #hero p,
+.motion-ready #hero a {
+  animation: hero-content-in 850ms var(--motion-ease) both;
+}
+
+.motion-ready #hero p { animation-delay: 120ms; }
+.motion-ready #hero a { animation-delay: 240ms; }
+
+.motion-ready #hero::before {
+  animation: hero-wash-in 1200ms ease-out both;
+}
+
+@keyframes hero-content-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-wash-in {
+  from { opacity: 0.35; }
+  to { opacity: 1; }
+}
+
+/* Content stays visible if JavaScript is unavailable. */
+.motion-ready .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity var(--motion-duration) var(--motion-ease),
+    transform var(--motion-duration) var(--motion-ease);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.motion-ready .reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motion-ready .menu-card.reveal-on-scroll { transform: translateY(18px); }
+.motion-ready .menu-card.reveal-on-scroll.is-visible { transform: translateY(0); }
+.motion-ready .menu-card.reveal-on-scroll.is-visible:hover { transform: translateY(-6px); }
+
+.motion-ready .event-1.reveal-on-scroll.is-visible:hover,
+.motion-ready .event-2.reveal-on-scroll.is-visible:hover,
+.motion-ready .event-3.reveal-on-scroll.is-visible:hover { transform: translateY(-4px); }
+
+/* Refine existing image hover feedback without changing card geometry. */
+#menu .menu-card img {
+  transform: scale(1);
+  transition: opacity 400ms ease, transform 650ms var(--motion-ease);
+}
+#menu .menu-card:hover img { transform: scale(1.025); }
+
+.menu-card,
+.gallery-item img,
+.event-1,
+.event-2,
+.event-3,
+#hero button,
+.add-to-cart,
+.event-info button {
+  transition-timing-function: var(--motion-ease);
+}
+
+#hero button:active,
+.add-to-cart:active,
+.event-info button:active { transform: translateY(0) scale(0.98); }
+
+.add-to-cart.is-added {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: #fff;
+}
+
+.event-info button.is-saved {
+  background: var(--sage);
+  color: #fff;
+}
+
+.interaction-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 1200;
+  max-width: min(420px, calc(100vw - 32px));
+  padding: 13px 18px;
+  border: 1px solid rgba(245, 240, 232, 0.18);
+  border-radius: 4px;
+  background: var(--dark);
+  color: var(--bg);
+  box-shadow: 0 12px 32px rgba(26, 14, 8, 0.24);
+  font-family: "DM Mono", monospace;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 12px);
+  transition: opacity 220ms ease, transform 300ms var(--motion-ease);
+}
+
+.interaction-toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* Keyboard focus is as visible as hover, using the existing colour palette. */
+#hero a:focus-visible,
+#hero button:focus-visible,
+.nav-bar a:focus-visible,
+.add-to-cart:focus-visible,
+.event-info button:focus-visible,
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 4px;
+}
+
+.book-pick-sticky {
+  transition: box-shadow 300ms ease, filter 300ms ease;
+}
+
+.book-pick-photo:hover .book-pick-sticky {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
+  filter: brightness(1.035);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  .motion-ready .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+
+  .interaction-toast { transition: none; }
+}
