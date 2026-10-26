@@ -48,6 +48,9 @@
 }
 
 .motion-ready .menu-card.reveal-on-scroll { transform: translateY(18px); }
+/* Preserve the book photo's original tilt during its reveal. */
+.motion-ready .book-pick-photo.reveal-on-scroll { transform: rotate(-2deg) translateY(18px); }
+.motion-ready .book-pick-photo.reveal-on-scroll.is-visible { transform: rotate(-2deg) translateY(0); }
 .motion-ready .menu-card.reveal-on-scroll.is-visible { transform: translateY(0); }
 .motion-ready .menu-card.reveal-on-scroll.is-visible:hover { transform: translateY(-6px); }
 
